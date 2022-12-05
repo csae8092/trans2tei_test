@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project basedir="." name="mpxml2tei" default="generate-tei">
 
-    <property name="collection.id" value="${COL_ID}"/>
-    <property name="tei.dir" value="./tei/${collection.id}"/>
-    <property name="source.dir" value="./mets/${collection.id}"/>
-    <property name="source.dir-1" value="./tei/${collection.id}"/>
+    <!--<property name="collection.id" value="${COL_ID}"/>-->
+    <property name="document.id" value="${DOC_ID}"/>
+    <property name="tei.dir" value="./tei/${document.id}"/>
+    <!--<property name="tei.dir" value="./tei/${collection.id}"/>-->
+    <property name="source.dir" value="./mets/${document.id}"/>
+    <!--<property name="source.dir" value="./mets/${collection.id}"/>-->
+    <property name="source.dir-1" value="./tei/${document.id}"/>
+    <!--<property name="source.dir-1" value="./tei/${collection.id}"/>-->
     <property name="stylesheet-1" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/page2tei-0.xsl"/>
     <property name="stylesheet-2" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-1.xsl"/>
     <property name="stylesheet-3" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-2.xsl"/>
@@ -28,7 +32,8 @@
         <xslt style="${stylesheet-1}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -37,7 +42,8 @@
         <xslt style="${stylesheet-2}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -46,7 +52,8 @@
         <xslt style="${stylesheet-3}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -55,7 +62,8 @@
         <xslt style="${stylesheet-4}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -64,7 +72,8 @@
         <xslt style="${stylesheet-5}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -73,7 +82,8 @@
         <xslt style="${stylesheet-6}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -82,7 +92,8 @@
         <xslt style="${stylesheet-7}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir}">
                 <include name="*.xml"/>
             </fileset>
@@ -93,7 +104,8 @@
         <xslt style="${stylesheet-8}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -102,7 +114,8 @@
         <xslt style="${stylesheet-9}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -111,7 +124,8 @@
         <xslt style="${stylesheet-10}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -120,7 +134,8 @@
         <xslt style="${stylesheet-11}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -129,7 +144,8 @@
         <xslt style="${stylesheet-12}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -138,7 +154,8 @@
         <xslt style="${stylesheet-13}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -147,7 +164,8 @@
         <xslt style="${stylesheet-14}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -156,7 +174,8 @@
         <xslt style="${stylesheet-15}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -165,7 +184,8 @@
         <xslt style="${stylesheet-16}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -174,7 +194,8 @@
         <xslt style="${stylesheet-17}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
@@ -183,7 +204,8 @@
         <xslt style="${stylesheet-18}" destdir="${tei.dir}" basedir="${source.dir-1}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
-            <param name="col-id"  expression="${collection.id}"/>
+            <!--<param name="col-id"  expression="${collection.id}"/>-->
+            <param name="col-id"  expression="${document.id}"/>
             <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
