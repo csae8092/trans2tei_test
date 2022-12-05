@@ -4,14 +4,187 @@
     <property name="collection.id" value="${COL_ID}"/>
     <property name="tei.dir" value="./tei/${collection.id}"/>
     <property name="source.dir" value="./mets/${collection.id}"/>
-    <property name="stylesheet" value="./page2tei/page2tei-0.xsl"/>
+    <property name="source.dir-1" value="./tei/${collection.id}"/>
+    <property name="stylesheet-1" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/page2tei-0.xsl"/>
+    <property name="stylesheet-2" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-1.xsl"/>
+    <property name="stylesheet-3" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-2.xsl"/>
+    <property name="stylesheet-4" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-3.xsl"/>
+    <property name="stylesheet-5" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/letter-tags-4.xsl"/>
+    <property name="stylesheet-6" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/replace_seite-esc-lb-continued.xsl"/>
+    <property name="stylesheet-7" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/split-files.xsl"/>
+    <property name="stylesheet-8" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/strip-letter.xsl"/>
+    <property name="stylesheet-9" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/p-correction1.xsl"/>
+    <property name="stylesheet-10" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/p-correction2.xsl"/>
+    <property name="stylesheet-11" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/page2tei-master/de-escape.xsl"/>
+    <property name="stylesheet-12" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/rautePMBstattRaute.xsl"/>
+    <property name="stylesheet-13" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/facs_transkribus-teil-weg.xsl"/>
+    <property name="stylesheet-14" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/rautePMBstattRaute.xsl"/>
+    <property name="stylesheet-15" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/backElement-0.xsl"/>
+    <property name="stylesheet-16" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/backElement-1.xsl"/>
+    <property name="stylesheet-17" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/backElement-2.xsl"/>
+    <property name="stylesheet-18" value="https://github.com/arthur-schnitzler/arthur-schnitzler-arbeit/blob/main/xslts/backElement-3.xsl"/>
     <property name="lib.dir" value="lib"/>
     <target name="make-tei">
-        <xslt style="${stylesheet}" destdir="${tei.dir}" basedir="${source.dir}">
+        <xslt style="${stylesheet-1}" destdir="${tei.dir}" basedir="${source.dir}">
             <factory name="net.sf.saxon.TransformerFactoryImpl"/>
             <classpath location="./saxon/saxon9he.jar"/>
             <param name="col-id"  expression="${collection.id}"/>
             <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-2}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-3}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-4}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-5}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-6}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-7}" destdir="${tei.dir}" basedir="${source.dir}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+    </target>
+    <target name="finishing-process">
+        <xslt style="${stylesheet-8}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-9}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-10}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-11}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-12}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-13}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-14}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-15}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-16}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-17}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
+                <include name="*.xml"/>
+            </fileset>
+            <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
+        </xslt>
+        <xslt style="${stylesheet-18}" destdir="${tei.dir}" basedir="${source.dir-1}">
+            <factory name="net.sf.saxon.TransformerFactoryImpl"/>
+            <classpath location="./saxon/saxon9he.jar"/>
+            <param name="col-id"  expression="${collection.id}"/>
+            <fileset dir="${source.dir-1}">
                 <include name="*.xml"/>
             </fileset>
             <mapper type="glob" from="*_mets.xml" to="*_tei.xml"/>
