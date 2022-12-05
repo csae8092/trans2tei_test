@@ -3,14 +3,14 @@ name: Download and process
 on: 
   workflow_dispatch:
     inputs:
-      #colId:
-        #description: 'Collection ID'     
-        #required: true
-        #default: '171233'
+      colId:
+        description: 'Collection ID'     
+        required: true
+        default: '171233'
       docId:
         description: 'Document ID'
         required: true
-        default: '143866/1195567'
+        default: '143866'
 
 
 jobs:
