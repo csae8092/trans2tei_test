@@ -10,7 +10,7 @@ on:
       docId:
         description: 'Document ID'
         required: true
-        default: '171233'
+        default: '143866/1195567'
 
 
 jobs:
