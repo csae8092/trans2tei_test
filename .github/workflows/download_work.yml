@@ -3,8 +3,12 @@ name: Download and process
 on: 
   workflow_dispatch:
     inputs:
-      colId:
-        description: 'Collection ID'     
+      #colId:
+        #description: 'Collection ID'     
+        #required: true
+        #default: '171233'
+      docId:
+        description: 'Document ID'
         required: true
         default: '171233'
 
@@ -17,7 +21,8 @@ jobs:
       ANT_OPTS: -Xmx5g
       TR_USER: ${{ secrets.TR_USER }}
       TR_PW: ${{ secrets.TR_PW}}
-      COL_ID: ${{ github.event.inputs.colId }}
+      #COL_ID: ${{ github.event.inputs.colId }}
+      #DOC_ID: ${{ github.event.inputs.docId }}
     steps:
     - name: Perform Checkout
       uses: actions/checkout@v2
@@ -34,7 +39,9 @@ jobs:
         python ./scripts/fetch_mets.py
     - name: Transform to TEI
       run: |
-        ant -DCOL_ID=${COL_ID} -f ./build_tei.xml
+        #ant -DCOL_ID=${COL_ID} -f ./build_tei.xml
+        ant -DDOC_ID=${DOC_ID} -f ./build_tei.xml
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
-        commit_message: Exported and Transformed ColId ${{ github.event.inputs.colId }}
+        #commit_message: Exported and Transformed ColId ${{ github.event.inputs.colId }}
+        commit_message: Exported and transformed DocId ${{ github.event.inputs.docId }}
