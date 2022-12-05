@@ -38,9 +38,9 @@ jobs:
       run: |
         python ./scripts/fetch_mets.py
     - name: Transform to TEI
-      run: |
-        #ant -DCOL_ID=${COL_ID} -f ./build_tei.xml
-        ant -DDOC_ID=${DOC_ID} -f ./build_tei.xml
+      #run: |
+      #  ant -DCOL_ID=${COL_ID} -f ./build_tei.xml
+      run: ant -DDOC_ID=${DOC_ID} -f ./build_tei.xml
     - uses: stefanzweifel/git-auto-commit-action@v4
       with:
         #commit_message: Exported and Transformed ColId ${{ github.event.inputs.colId }}
